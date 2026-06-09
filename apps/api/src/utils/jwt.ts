@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { env } from "../config/env.config";
-import {Types} from "mongoose";
+import { Types } from "mongoose";
 
 export const generateAccessToken = (_id: Types.ObjectId) => {
   return jwt.sign({ _id: _id }, env.JWT_ACCESS_SECRET, {

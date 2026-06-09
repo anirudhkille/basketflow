@@ -1,12 +1,12 @@
 import { AppError } from "../../utils/AppError";
-import User from "./user.model";
+import * as userRepository from "./user.repositry";
 
 export const findUserByEmail = async (email: string) => {
-  return User.findOne({ email });
+  return userRepository.findEmail(email);
 };
 
 export const findUserByEmailOrThrow = async (email: string) => {
-  const user = await User.findOne({ email });
+  const user = await userRepository.findEmail(email);
   if (!user) {
     throw new AppError(404, "User not found");
   }
@@ -14,5 +14,5 @@ export const findUserByEmailOrThrow = async (email: string) => {
 };
 
 export const createUser = async (email: string) => {
-  return User.create({ email });
+  return userRepository.create(email);
 };

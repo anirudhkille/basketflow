@@ -1,5 +1,9 @@
 import User from "./user.model";
 
-export const findEmail = async (email: string) => {
-  await User.findOne({ email });
+export const create = (email: string) => {
+  return User.create({ email });
+};
+
+export const findEmail = (email: string) => {
+  return User.findOne({ email });
 };

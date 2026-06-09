@@ -4,7 +4,11 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "pnpm dlx tsx --watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts",
+    "check-types": "tsc --noEmit",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check ."
   },
   "keywords": [],
   "author": "",

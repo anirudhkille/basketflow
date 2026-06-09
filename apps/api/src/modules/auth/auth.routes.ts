@@ -1,5 +1,10 @@
 import { Router } from "express";
-import { refreshToken, sendLoginOtp, verifyLoginOtp,logout } from "./auth.controller";
+import {
+  refreshToken,
+  sendLoginOtp,
+  verifyLoginOtp,
+  logout,
+} from "./auth.controller";
 import { validate } from "../../middlewares/validate.middleware";
 import { sendLoginOtpSchema, verifyLoginOtpSchema } from "./auth.schema";
 
