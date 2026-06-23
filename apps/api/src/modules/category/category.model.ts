@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Schema, model } from "mongoose";
 
 export interface ICategory extends Document {
   name: string;
@@ -7,7 +7,7 @@ export interface ICategory extends Document {
   image: string;
 }
 
-const categorySchema = new mongoose.Schema<ICategory>({
+const categorySchema = new Schema<ICategory>({
   name: {
     type: String,
     required: true,
@@ -26,5 +26,5 @@ const categorySchema = new mongoose.Schema<ICategory>({
   },
 });
 
-const Category = mongoose.model<ICategory>("Category", categorySchema);
+const Category = model<ICategory>("Category", categorySchema);
 export default Category;

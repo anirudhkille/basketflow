@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import authRoutes from "./modules/auth/auth.routes";
 import categoryRoutes from "./modules/category/category.routes";
+import productRoutes from "./modules/product/product.routes";
 import { sendResponse } from "./utils/response";
 
 const app = express();
@@ -16,5 +17,6 @@ app.get("/api/health", (_req: Request, res: Response) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/api/product", productRoutes);
 
 export default app;

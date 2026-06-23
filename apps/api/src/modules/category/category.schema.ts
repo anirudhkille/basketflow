@@ -7,4 +7,12 @@ export const createCategorySchema = z.object({
   image: z.string().optional(),
 });
 
+export const updateCategorySchema = z.object({
+  name: z.string().optional,
+  slug: z.string().optional,
+  isActive: z.boolean().optional(),
+  image: z.string().optional(),
+});
+
 export type CreateCategoryInput = z.infer<typeof createCategorySchema>;
+export type UpdateCategoryInput = z.infer<typeof updateCategorySchema>;

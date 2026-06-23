@@ -7,13 +7,15 @@
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint -- --fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-     "format:check": "prettier . --check .",
+    "format:check": "prettier . --check .",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
     "prettier": "^3.7.4",
     "turbo": "^2.9.15",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^9.39.1"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {

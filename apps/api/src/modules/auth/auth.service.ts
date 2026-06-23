@@ -53,7 +53,7 @@ export const verifyOtp = async (email: string, otp: string) => {
   return { user, accessToken, refreshToken };
 };
 
-export const refreshTokenService = async (token: string) => {
+export const refreshToken = async (token: string) => {
   if (!token) {
     throw new AppError(401, "No token provided");
   }
@@ -93,7 +93,7 @@ export const refreshTokenService = async (token: string) => {
   return { accessToken, refreshToken };
 };
 
-export const logoutService = async (token: string) => {
+export const logout = async (token: string) => {
   const decoded = jwt.verify(token, env.JWT_REFRESH_SECRET) as JwtPayload;
 
   await redis.del(`refreshToken:${decoded._id}`);
